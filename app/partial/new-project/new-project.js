@@ -21,6 +21,8 @@ angular.module('app').controller('NewProjectCtrl',function(
 
     $scope.onCreateClick = function(){
 
+        $scope.project.author = $scope.project.author.name;
+
         project.create($scope.project)
             .then(function(res){
 
