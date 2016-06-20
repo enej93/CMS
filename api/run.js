@@ -8,9 +8,16 @@ const config    = require('./config');
 
 database.init()
     .then(server.init)
-    .then(function(){
+    .then(()=>{
+        require('./resources')();
+    })
+    .then(()=>{
 
         console.log('All is well | on port: '+config.PORT);
 
-    });
+    })
+    .catch(function(err){
 
+        console.log('Error:',err);
+
+    });
