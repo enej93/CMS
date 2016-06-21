@@ -1,4 +1,8 @@
-angular.module('app').controller('ProjectsCtrl',function($scope){
+angular.module('app').controller('ProjectsCtrl',function(
+    $scope,
+    project
+){
 
+    $scope.projects = project.model.list;
 
 });

@@ -10,7 +10,14 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
     $stateProvider.state('projects', {
         url: '/projects',
         templateUrl: 'partial/projects/projects.html',
-        controller: 'ProjectsCtrl'
+        controller: 'ProjectsCtrl',
+        resolve:{
+            projects: function(project){
+
+                return project.getList();
+
+            }
+        }
     });
     $stateProvider.state('new-project', {
         url: '/new-project',

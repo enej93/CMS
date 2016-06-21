@@ -12,8 +12,12 @@ module.exports = function(){
 
         Project.find(function(err, docs){
 
-            res.send(docs);
-
+            if(err){
+                res.status(400).send(err);
+            }else {
+                res.send(docs);
+            }
+            
         });
 
     });

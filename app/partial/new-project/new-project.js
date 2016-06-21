@@ -21,12 +21,15 @@ angular.module('app').controller('NewProjectCtrl',function(
 
     $scope.onCreateClick = function(){
 
+        $scope.isCreating = true;
+
         $scope.project.author = $scope.project.author.name;
 
         project.create($scope.project)
             .then(function(res){
 
-                console.log(res);
+                $scope.isCreating = false;
+                $state.go('projects');
 
             });
 
