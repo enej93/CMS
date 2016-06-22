@@ -1,6 +1,5 @@
 angular.module('app', [
     'ui.bootstrap',
-    'ui.utils',
     'ui.router',
     'ngAnimate',
     'ngFileUpload'
@@ -41,6 +40,15 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
 
            }
         }
+    });
+    $stateProvider.state('inventory', {
+        url: '/inventory',
+        templateUrl: 'partial/inventory/inventory.html',
+        controller: 'InventoryCtrl'
+    });
+    $stateProvider.state('locations', {
+        url: '/locations',
+        templateUrl: 'partial/locations/locations.html'
     });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/home');

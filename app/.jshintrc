@@ -13,6 +13,7 @@
     "smarttabs": true,
     "globals": {
         "jQuery": true,
+        "confirm":true,
         "angular": true,
         "console": true,
         "$": true,

@@ -59,14 +59,12 @@ angular.module('app').factory('project',function($http) {
 
                 });
 
-                console.log(res);
-
             });
 
             return promise;
 
         },
-        update:function(){
+        update:function(id, data){
 
             var promise = $http.put('http://localhost:3010/project/'+id, data);
 

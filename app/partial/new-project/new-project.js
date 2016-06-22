@@ -1,6 +1,7 @@
 angular.module('app').controller('NewProjectCtrl',function(
     $scope,
-    project
+    project,
+    $state
 ){
 
     $scope.project = {

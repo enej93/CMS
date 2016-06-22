@@ -4,7 +4,8 @@
   <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
-  <link href="app.less" type="text/css" rel="stylesheet/less">
+    <link href="app.less" type="text/css" rel="stylesheet/less">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
 </head>
 <body>
 
@@ -35,9 +36,13 @@
   <script src="directive/upload-box/upload-box.js"></script>
   <script src="service/project.js"></script>
   <script src="partial/edit-project/edit-project.js"></script>
+  <script src="partial/inventory/inventory.js"></script>
+  <script src="partial/locations/locations.js"></script>
+  <script src="partial/header/header.js"></script>
   <!-- Add New Component JS Above -->
 
- <div ng-include="'partial/sidebar/sidebar.html'"></div>
+  <div ng-include="'partial/sidebar/sidebar.html'"></div>
+  <div ng-include="'partial/header/header.html'"></div>
 
  <div class="main-view" ui-view></div>
 

@@ -21,7 +21,7 @@ angular.module('app').controller('EditProjectCtrl',function(
 
         Upload.upload({
             url:'http://localhost:3010/upload',
-            data:{file:file}
+            data:{file:files}
         }).then(function (resp) {
             console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
         }, function (resp) {
