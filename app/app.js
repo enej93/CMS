@@ -1,4 +1,10 @@
-angular.module('app', ['ui.bootstrap','ui.router','ngAnimate']);
+angular.module('app', [
+    'ui.bootstrap',
+    'ui.utils',
+    'ui.router',
+    'ngAnimate',
+    'ngFileUpload'
+]);
 
 angular.module('app').config(function($stateProvider, $urlRouterProvider) {
 
@@ -23,6 +29,18 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
         url: '/new-project',
         templateUrl: 'partial/new-project/new-project.html',
         controller: 'NewProjectCtrl'
+    });
+    $stateProvider.state('edit-project', {
+        url: '/edit-project/:id',
+        templateUrl: 'partial/edit-project/edit-project.html',
+        controller: 'EditProjectCtrl',
+        resolve:{
+           project:function(project, $stateParams){
+
+               return project.getOne($stateParams.id);
+
+           }
+        }
     });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/home');

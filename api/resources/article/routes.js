@@ -6,7 +6,7 @@ const server = require('../../server').server;
 
 module.exports = function(){
 
-    servet.get('/articles', function(){
+    server.get('/articles', function(){
 
         res.send('Hello world articles');
 

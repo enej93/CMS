@@ -3,7 +3,8 @@ angular.module('app').factory('project',function($http) {
     var project = {
 
         model:{
-            list:[]
+            list:[],
+            item:null,
         },
 
         create:function(data){
@@ -13,7 +14,18 @@ angular.module('app').factory('project',function($http) {
             return promise;
 
         },
-        getOne:function(){
+        getOne:function(id){
+
+            var promise = $http.get('http://localhost:3010/project/'+id);
+
+            promise.then(function(res){
+
+                console.log(res);
+                project.model.item = res.data;
+
+            });
+
+            return promise;
 
         },
         getList:function(){
@@ -27,10 +39,46 @@ angular.module('app').factory('project',function($http) {
             });
 
         },
-        delete:function(){
+        delete:function(id){
+
+            var c = confirm('Are you sure?');
+
+            if(c === false){
+                return false;
+            }
+
+            var promise = $http.delete('http://localhost:3010/project/'+id);
+
+            promise.then(function(){
+
+                angular.forEach(project.model.list, function(project, i){
+
+                    if(project._id === id){
+                        project.model.list.splice(i,1);
+                    }
+
+                });
+
+                console.log(res);
+
+            });
+
+            return promise;
 
         },
-        update:function(){}
+        update:function(){
+
+            var promise = $http.put('http://localhost:3010/project/'+id, data);
+
+            promise.then(function(res){
+
+                console.log(res);
+
+            });
+
+            return promise;
+
+        }
     };
 
     return project;

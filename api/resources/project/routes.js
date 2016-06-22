@@ -3,8 +3,17 @@
  */
 const server    = require('../../server').server;
 const mongoose  = require('mongoose');
+const multer    = require('multer');
+const upload    = multer({ dest: 'uploads/' });
 
 module.exports = function(){
+
+    server.post('/upload', upload.single('file'), function(req, res){
+
+        console.log(req.file);
+        res.sendStatus(200);
+
+    });
 
     server.get('/projects', function(){
 
@@ -61,10 +70,34 @@ module.exports = function(){
 
     });
 
+    server.get('/project/:id', (req, res)=>{
+
+        const projectId = req.params.ide;
+
+        const Project = mongoose.model('Project');
+
+        Project.findById(projectId, (err, doc)=>{
+
+            if(!err){
+
+                res.send(doc);
+
+            }else {
+
+                res.status(400).send(err);
+
+            }
+
+        });
+
+    });
+
     server.put('/project/:id', (req,res)=>{
 
         const projectId = req.params.id;
         const projectData = req.body;
+
+        const Project = mongoose.model('Project');
 
         Project.findByIdAndUpdate(projectId, projectData, { new:true }, function(err, doc){
 
