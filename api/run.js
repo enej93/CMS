@@ -18,6 +18,6 @@ database.init()
     })
     .catch(function(err){
 
-        console.log('Error:',err);
+        console.log('Catch error:',err);
 
     });

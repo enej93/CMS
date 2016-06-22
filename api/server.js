@@ -1,12 +1,14 @@
 /**
  * Created by enejl on 14. 06. 2016.
  */
-const express   = require('express');
-const server    = express();
-const bodyParser= require('body-parser');
-const cors      = require("cors");
+const express       = require('express');
+const server        = express();
+const bodyParser    = require('body-parser');
+const cors          = require("cors");
+const serveIndex    = require('serve-index');
+const PORT          = require('./config').PORT;
 
-const PORT      = require('./config').PORT;
+exports.server = server;
 
 exports.init = function(){
 
@@ -15,14 +17,16 @@ exports.init = function(){
         server.use(bodyParser.json());
         server.use(bodyParser.urlencoded({extended:true}));
         server.use(cors());
+        server.use('/uploads',serveIndex('./uploads', {'icons': true}));
+        server.use('/uploads', express.static('./uploads'));
 
-        server.listen(3010, function(){
+        server.listen(PORT, function(){
 
             console.log('Server started');
             resolve();
 
         });
 
-    })
+    });
 
 };
