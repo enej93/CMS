@@ -1,18 +1,20 @@
 <div>
 
-    <h1>New location</h1>
+    <div class="title-container-new-locations">
+        <h2>New location</h2>
+    </div>
     <hr/>
     <label>Location name</label>
     <input ng-model="location.title" type="text" class="form-control"/>
     <br/>
     <label>Date added</label>
-    <textarea ng-model="location.body" class="form-control"></textarea>
+    <input ng-model="location.body" type="date" class="form-control"></input>
     <br/>
     <label>Address</label>
     <input ng-model="location.link" type="text" class="form-control"/>
     <br/>
 
-    <label>Cover image</label>
+    <!-- <label>Cover image</label>
     <br/>
     <div class="drop-zone" ngf-drop="uploadFiles($file)" ngf-drag-over-class="'dragover'">
         <div class="btn btn-primary" ngf-select="uploadFiles($file)">Upload cover image</div>
@@ -24,7 +26,7 @@
              aria-valuenow="{{uploadData.progress}}" aria-valuemin="0" aria-valuemax="100" style="width:{{uploadData.progress}}%">
             {{uploadData.progress}}%
         </div>
-    </div>
+    </div>  !-->
 
     <div class="btn btn-success pull-right" ng-disabled="isCreating" ng-click="onCreateClick()">Create</div>
 
