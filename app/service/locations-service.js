@@ -1,6 +1,6 @@
-angular.module('app').factory('project',function($http) {
+angular.module('app').factory('locationsService',function($http) {
 
-    var project = {
+    var locationsService = {
 
         model:{
             list:[],
@@ -9,19 +9,19 @@ angular.module('app').factory('project',function($http) {
 
         create:function(data){
 
-            var promise = $http.post('http://localhost:3010/project', data);
+            var promise = $http.post('http://localhost:3010/location', data);
 
             return promise;
 
         },
         getOne:function(id){
 
-            var promise = $http.get('http://localhost:3010/project/'+id);
+            var promise = $http.get('http://localhost:3010/location/'+id);
 
             promise.then(function(res){
 
                 console.log(res);
-                project.model.item = res.data;
+                locationsService.model.item = res.data;
 
             });
 
@@ -30,11 +30,11 @@ angular.module('app').factory('project',function($http) {
         },
         getList:function(){
 
-            var promise = $http.get('http://localhost:3010/projects');
+            var promise = $http.get('http://localhost:3010/locations');
 
             promise.then(function(res){
 
-                project.model.list = res.data;
+                locationsService.model.list = res.data;
 
             });
 
@@ -47,14 +47,14 @@ angular.module('app').factory('project',function($http) {
                 return false;
             }
 
-            var promise = $http.delete('http://localhost:3010/project/'+id);
+            var promise = $http.delete('http://localhost:3010/location/'+id);
 
             promise.then(function(){
 
-                angular.forEach(project.model.list, function(project, i){
+                angular.forEach(locationsService.model.list, function(location, i){
 
-                    if(project._id === id){
-                        project.model.list.splice(i,1);
+                    if(location._id === id){
+                        locationsService.model.list.splice(i,1);
                     }
 
                 });
@@ -66,7 +66,7 @@ angular.module('app').factory('project',function($http) {
         },
         update:function(id, data){
 
-            var promise = $http.put('http://localhost:3010/project/'+id, data);
+            var promise = $http.put('http://localhost:3010/location/'+id, data);
 
             promise.then(function(res){
 
@@ -79,5 +79,5 @@ angular.module('app').factory('project',function($http) {
         }
     };
 
-    return project;
+    return locationsService;
 });

@@ -50,6 +50,10 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
         url: '/locations',
         templateUrl: 'partial/locations/locations.html'
     });
+    $stateProvider.state('new-location', {
+        url: '/new-location',
+        templateUrl: 'partial/new-location/new-location.html'
+    });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/home');
 
