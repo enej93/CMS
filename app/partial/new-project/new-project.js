@@ -1,6 +1,6 @@
 angular.module('app').controller('NewProjectCtrl',function(
     $scope,
-    projectService,
+    project,
     $state,
     Upload,
     $timeout
