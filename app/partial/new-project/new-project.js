@@ -19,13 +19,13 @@ angular.module('app').controller('NewProjectCtrl',function(
 
     $scope.authors = [
         {
-            name:'Gorazd'
+            name:'Enej'
         },
         {
-            name:'Matija'
+            name:'Alen'
         },
         {
-            name:'Andrej'
+            name:'Bojan'
         }
     ];
 

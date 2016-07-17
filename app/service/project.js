@@ -38,6 +38,8 @@ angular.module('app').factory('project',function($http) {
 
             });
 
+            return promise;
+
         },
         delete:function(id){
 
@@ -51,9 +53,9 @@ angular.module('app').factory('project',function($http) {
 
             promise.then(function(){
 
-                angular.forEach(project.model.list, function(project, i){
+                angular.forEach(project.model.list, function(_project, i){
 
-                    if(project._id === id){
+                    if(_project._id === id){
                         project.model.list.splice(i,1);
                     }
 
