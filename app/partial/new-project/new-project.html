@@ -18,19 +18,8 @@
     </select>
     <br/>
 
-    <label>Cover image</label>
     <br/>
-    <div class="drop-zone" ngf-drop="uploadFiles($file)" ngf-drag-over-class="'dragover'">
-        <div class="btn btn-primary" ngf-select="uploadFiles($file)">Upload cover image</div>
-    </div>
-    <p ng-if="project.coverImage">{{project.coverImage}}</p>
-    <br/>
-    <div class="progress" ng-if="isUploading">
-        <div class="progress-bar progress-bar-striped active" role="progressbar"
-             aria-valuenow="{{uploadData.progress}}" aria-valuemin="0" aria-valuemax="100" style="width:{{uploadData.progress}}%">
-            {{uploadData.progress}}%
-        </div>
-    </div>
+
 
     <div class="btn btn-success pull-right" ng-disabled="isCreating" ng-click="onCreateClick()">Create</div>
 

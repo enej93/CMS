@@ -1,6 +1,6 @@
-angular.module('app').factory('project',function($http) {
+angular.module('app').factory('projectService',function($http) {
 
-    var project = {
+    var projectService = {
 
         model:{
             list:[],
@@ -21,7 +21,7 @@ angular.module('app').factory('project',function($http) {
             promise.then(function(res){
 
                 console.log(res);
-                project.model.item = res.data;
+                projectService.model.item = res.data;
 
             });
 
@@ -34,7 +34,7 @@ angular.module('app').factory('project',function($http) {
 
             promise.then(function(res){
 
-                project.model.list = res.data;
+                projectService.model.list = res.data;
 
             });
 
@@ -53,10 +53,10 @@ angular.module('app').factory('project',function($http) {
 
             promise.then(function(){
 
-                angular.forEach(project.model.list, function(_project, i){
+                angular.forEach(projectService.model.list, function(_project, i){
 
                     if(_project._id === id){
-                        project.model.list.splice(i,1);
+                        projectService.model.list.splice(i,1);
                     }
 
                 });
@@ -81,5 +81,5 @@ angular.module('app').factory('project',function($http) {
         }
     };
 
-    return project;
+    return projectService;
 });

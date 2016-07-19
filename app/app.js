@@ -17,9 +17,9 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'partial/projects/projects.html',
         controller: 'ProjectsCtrl',
         resolve:{
-            projects: function(project){
+            projects: function(projectService){
 
-                return project.getList();
+                return projectService.getList();
 
             }
         }
@@ -34,11 +34,11 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'partial/edit-project/edit-project.html',
         controller: 'EditProjectCtrl',
         resolve:{
-           project:function(project, $stateParams){
+            item:function(project, $stateParams){
 
-               return project.getOne($stateParams.id);
+                return project.getOne($stateParams.id);
 
-           }
+            }
         }
     });
     $stateProvider.state('inventory', {
@@ -48,7 +48,8 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
     });
     $stateProvider.state('locations', {
         url: '/locations',
-        templateUrl: 'partial/locations/locations.html'
+        templateUrl: 'partial/locations/locations.html',
+        controller:'LocationsCtrl'
     });
     $stateProvider.state('new-location', {
         url: '/new-location',

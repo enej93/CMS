@@ -1,13 +1,13 @@
 angular.module('app').controller('ProjectsCtrl',function(
     $scope,
-    project
+    projectService
 ){
 
-    $scope.projects = project.model.list;
+    $scope.projects = projectService.model.list;
 
     $scope.deleteClick = function(id){
 
-        project.delete(id)
+        projectService.delete(id)
         .then(function(){
 
 
@@ -18,7 +18,7 @@ angular.module('app').controller('ProjectsCtrl',function(
 
     $scope.editClick = function (id){
 
-        
+
 
     };
 

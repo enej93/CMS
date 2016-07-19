@@ -5,6 +5,10 @@ angular.module('app').controller('LocationsCtrl',function(
 
     $scope.locations = locationsService.model.list;
 
+    $scope.state = {
+        new:false
+    };
+
     $scope.deleteClick = function(id){
 
         locationsService.delete(id)
@@ -19,6 +23,13 @@ angular.module('app').controller('LocationsCtrl',function(
     $scope.editClick = function (id){
 
 
+
+    };
+
+    $scope.newClick = function(){
+
+        console.log('New click');
+        $scope.state.new = true;
 
     };
 

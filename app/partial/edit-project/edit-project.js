@@ -1,43 +1,27 @@
 angular.module('app').controller('EditProjectCtrl',function(
     $scope,
-    project,
-    $state,
-    Upload
+    projectService,
+    $state
 ){
 
     $scope.authors = [
         {
-            name:'Gorazd'
+            name:'Enej'
         },
         {
-            name:'Matija'
+            name:'Bojan'
         },
         {
-            name:'Andrej'
+            name:'Alen'
         }
     ];
 
-    $scope.uploadFiles = function(files){
 
-        Upload.upload({
-            url:'http://localhost:3010/upload',
-            data:{file:files}
-        }).then(function (resp) {
-            console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
-        }, function (resp) {
-            console.log('Error status: ' + resp.status);
-        }, function (evt) {
-            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
-        });
-
-    };
-
-    $scope.project = project.model.item;
+    $scope.project = projectService.model.item;
 
     $scope.saveClick = function(){
 
-        project.update($scope.project._id, $scope.project)
+        projectService.update($scope.project._id, $scope.project)
         .then(function(res){
 
             $state.go('projects');

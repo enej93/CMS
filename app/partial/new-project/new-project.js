@@ -1,6 +1,6 @@
 angular.module('app').controller('NewProjectCtrl',function(
     $scope,
-    project,
+    projectService,
     $state,
     Upload,
     $timeout
@@ -12,7 +12,7 @@ angular.module('app').controller('NewProjectCtrl',function(
         progress:0
     };
 
-    $scope.project = {
+    $scope.projectService = {
         author:'',
         coverImage: null
     };
@@ -29,33 +29,7 @@ angular.module('app').controller('NewProjectCtrl',function(
         }
     ];
 
-    $scope.uploadFiles = function(file){
 
-        $scope.isUploading = true;
-
-        Upload.upload({
-            url:'http://localhost:3010/upload',
-            data: { file:file }
-        }).then(function (resp) {
-
-            $scope.project.coverImage = resp.data.filename;
-
-            $timeout(function(){
-
-                $scope.isUploading = false;
-
-            },1000);
-
-        }, function (resp) {
-            console.log('Error status: ' + resp.status);
-        }, function (evt) {
-            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-            $scope.uploadData.progress = progressPercentage;
-
-            console.log('progress: ' + progressPercentage + '% ' + evt.config.data.file.name);
-        });
-
-    };
 
     $scope.onCreateClick = function(){
 
@@ -63,7 +37,7 @@ angular.module('app').controller('NewProjectCtrl',function(
 
         $scope.project.author = $scope.project.author.name;
 
-        project.create($scope.project)
+        projectService.create($scope.project)
             .then(function(res){
 
                 $scope.isCreating = false;
