@@ -31,6 +31,12 @@ angular.module('app').controller('LocationsCtrl',function(
         console.log('New click');
         $scope.state.new = true;
 
+        if($scope.state.new = true){
+
+            $(".new-location-button").css("display","none");
+
+        }
+
     };
 
 });

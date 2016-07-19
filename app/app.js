@@ -53,7 +53,8 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
     });
     $stateProvider.state('new-location', {
         url: '/new-location',
-        templateUrl: 'partial/new-location/new-location.html'
+        templateUrl: 'partial/new-location/new-location.html',
+        controller: 'NewLocationCtrl'
     });
     /* Add New States Above */
     $urlRouterProvider.otherwise('/home');
