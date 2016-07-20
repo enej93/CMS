@@ -19,7 +19,7 @@
     height: 750px;
     margin: auto;
     margin-left: -15px;
-    position: relative;
+    position: absolute;
 
     .main-inventory-content-container-box{
 
@@ -30,27 +30,157 @@
         margin-left: 25px;
         margin-top: 25px;
         position: relative;
-        overflow: auto;
+        box-shadow: 1px 1px 3px gray;
 
     }
 
-    .container-box-top{
+    .container-box-left{
 
         position: relative;
-        width: 100%;
-        height: 37.5px;
-        text-align: center;
-        line-height: 37.5px;
-        font-size: 25px;
-        font-weight: bold;
-        color: black;
+        width: 60%;
+        height: 100%;
+        display: inline-block;
+        float: left;
+
+        .container-box-left-top{
+
+            position: relative;
+            width: 100%;
+            height: 50px;
+            font-weight: bold;
+            font-size: 25px;
+            text-align: center;
+            line-height: 50px;
+            color: black;
+            border-bottom-right-radius: 15px;
+
+        }
+
+        .left-top-mintspray{
+
+            background-color: #03A9F4;
+
+        }
+
+        .left-top-toothbrush{
+
+            background-color: #f44336;
+
+        }
+
+        .left-top-mosquito{
+
+            background-color: #FFEB3B;
+
+        }
+
+        .left-top-balsam{
+
+            background-color: #795548;
+
+        }
+
+        .left-top-tauro{
+
+            background-color: #4CAF50;
+
+        }
+
+        .left-top-activex{
+
+            background-color: #9C27B0;
+
+        }
 
     }
 
-    .box-mintspray.box-balsam{
+    .container-box-right{
 
-        margin-left: 0px;
+        position: relative;
+        width: 40%;
+        height: 100%;
+        display: inline-block;
+
+    }
+
+    .container-box-mintspray{
+
+        background-image: url("../../img/Mint-spray.png");
+        background-position: center;
+
+    }
+
+    .container-box-toothbrush{
+
+        background-image: url("../../img/Toothbrush 4.jpg");
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    .container-box-mosquito{
+
+        background-image: url("../../img/Mosquito-4.png");
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    .container-box-balsam{
+
+        background-image: url("../../img/labello.png");
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    .container-box-tauro{
+
+        background-image: url("../../img/Sprej-Tauro.png");
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    .container-box-activex{
+
+        background-image: url("../../img/ActiveX 8.jpg");
+        background-position: center;
+        background-size: cover;
 
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
