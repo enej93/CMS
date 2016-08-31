@@ -1,6 +1,6 @@
 angular.module('app').controller('InventoryCtrl',function($scope){
 
-    (function() {
+    /*(function() {
 
         window.inputNumber = function(el) {
 
@@ -40,6 +40,6 @@ angular.module('app').controller('InventoryCtrl',function($scope){
         };
     })();
 
-    inputNumber($('.input-number'));
+    inputNumber($('.input-number')); */
 
 });
