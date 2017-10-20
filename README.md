@@ -7,7 +7,7 @@ This CMS project is a basic inventory management system, inspired by AdminLTE.
 
 # Motivation
 
-The CMS project was created as part of a school assignment. I decided to make an inventory management system to try an solve the problems me and my business partner encountered when managing over 300 vending machines scattered accross north-east Italy.
+The CMS project was created as part of a school assignment. I decided to make an inventory management system to try an solve the problems me and my business partner encountered when managing over 300 vending machines scattered accross north-east Italy. It was my first go at AngularJS.
 
 
 # Installation
